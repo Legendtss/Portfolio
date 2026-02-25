@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T S Shashank — AI/ML & Quantum Computing</title>
+<meta name="description" content="T S Shashank - BTech AI/ML student specializing in deep learning, cybersecurity, computer vision, and quantum computing. View my projects and experience.">
+<meta name="keywords" content="AI, ML, Machine Learning, Deep Learning, Quantum Computing, Python, TensorFlow, Computer Vision">
+<meta name="author" content="T S Shashank">
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="T S Shashank — AI/ML & Quantum Computing Portfolio">
+<meta property="og:description" content="BTech AI/ML student building real-world deep learning systems for cybersecurity and image processing. Currently exploring quantum computing.">
+<meta property="og:url" content="https://legendtss.github.io">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="T S Shashank — AI/ML & Quantum Computing">
+<meta name="twitter:description" content="AI/ML Engineer & Quantum Developer portfolio showcasing projects in deep learning, cybersecurity, and quantum computing.">
+<link rel="canonical" href="https://legendtss.github.io">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #030712;
+    --surface: #0d1117;
+    --surface2: #161b22;
+    --accent: #00d4ff;
+    --accent2: #7c3aed;
+    --accent3: #10b981;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --border: rgba(0,212,255,0.12);
+    --glow: 0 0 40px rgba(0,212,255,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* GRID BG */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NOISE */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(3,7,18,0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 3rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 .name-accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    margin-top: 2rem;
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-ctas {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,212,255,0.4);
+  }
+
+  .btn-secondary {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(0,212,255,0.08);
+  }
+
+  /* STATS ROW */
+  .stats-row {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .stat {
+    background: var(--bg);
+    padding: 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  /* SECTION */
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto 8rem;
+    padding: 0 3rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* EXPERIENCE */
+  .exp-card {
+    border: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    margin-bottom: 1.5rem;
+  }
+
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  }
+
+  .exp-card:hover {
+    border-color: rgba(0,212,255,0.3);
+    box-shadow: var(--glow);
+  }
+
+  .exp-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.3);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .exp-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-org {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .exp-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .chip {
+    padding: 0.3rem 0.8rem;
+    background: rgba(124,58,237,0.12);
+    border: 1px solid rgba(124,58,237,0.25);
+    color: #a78bfa;
+    font-size: 0.75rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: default;
+  }
+
+  .project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,212,255,0.03), rgba(124,58,237,0.03));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(0,212,255,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), var(--glow);
+  }
+
+  .project-card:hover::after { opacity: 1; }
+
+  .project-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.2);
+  }
+
+  .project-grade {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent3);
+    border: 1px solid rgba(16,185,129,0.3);
+    padding: 0.2rem 0.6rem;
+    background: rgba(16,185,129,0.08);
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .project-link {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.75rem;
+    font-family: 'Space Mono', monospace;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .project-link.repo {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .project-link.repo:hover {
+    background: rgba(0,212,255,0.1);
+  }
+
+  .project-link.demo {
+    background: var(--accent3);
+    color: #000;
+    border: 1px solid var(--accent3);
+  }
+
+  .project-link.demo:hover {
+    background: #34d399;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    transition: border-color 0.3s;
+  }
+
+  .skill-group:hover {
+    border-color: rgba(0,212,255,0.25);
+  }
+
+  .skill-group-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .skill-group-title::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    display: block;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.88rem;
+    color: #cbd5e1;
+  }
+
+  .skill-bar {
+    width: 80px;
+    height: 3px;
+    background: var(--surface2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    position: absolute;
+    left: 0; top: 0; height: 100%;
+    background: linear-gradient(to right, var(--accent), var(--accent2));
+    animation: barGrow 1.5s ease both;
+    transform-origin: left;
+  }
+
+  /* CERTS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: border-color 0.3s;
+  }
+
+  .cert-card:hover { border-color: rgba(0,212,255,0.25); }
+
+  .cert-icon {
+    width: 36px; height: 36px;
+    flex-shrink: 0;
+    background: rgba(124,58,237,0.12);
+    border: 1px solid rgba(124,58,237,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .cert-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .cert-org {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+  }
+
+  .contact-item:hover {
+    border-color: rgba(0,212,255,0.3);
+    box-shadow: var(--glow);
+    color: var(--accent);
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+    width: 48px; height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.15);
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* QUANTUM ORBS BG */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .orb1 {
+    width: 500px; height: 500px;
+    background: rgba(0,212,255,0.05);
+    top: -100px; right: -100px;
+  }
+
+  .orb2 {
+    width: 400px; height: 400px;
+    background: rgba(124,58,237,0.06);
+    bottom: 20%; left: -100px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes barGrow {
+    from { width: 0; }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .live-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent3);
+    animation: pulse-dot 1.5s ease infinite;
+    margin-right: 0.4rem;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent2); }
+
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 101;
+    padding: 0.5rem;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* SKIP LINK - Accessibility */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--accent);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    z-index: 1000;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(3,7,18,0.98);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links.active {
+      display: flex;
+    }
+    .nav-links a {
+      font-size: 1.2rem;
+    }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    section { padding: 0 1.5rem; }
+    .stats-row { grid-template-columns: 1fr; }
+    .projects-grid, .skills-grid, .certs-grid, .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Skip Link for Accessibility -->
+<a href="#about" class="skip-link">Skip to main content</a>
+
+<div class="orb orb1" aria-hidden="true"></div>
+<div class="orb orb2" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">TSS_PORTFOLIO.v1</div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" role="menubar">
+    <li role="none"><a href="#about" role="menuitem">About</a></li>
+    <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+    <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+    <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="hero-tag">
+    <span class="live-dot"></span>
+    Available for opportunities · Bengaluru, India
+  </div>
+  <h1>
+    <span class="name-accent">T S Shashank</span><br>
+    AI/ML Engineer &<br>Quantum Developer
+  </h1>
+  <p class="hero-sub">
+    BTech AI & ML student at BMSIT (CGPA 9.05) passionate about building scalable software solutions. Experienced in deep learning, computer vision, and full-stack development — currently exploring quantum computing as an intern at Ada Lovelace Software.
+  </p>
+  <div class="hero-ctas">
+    <a href="mailto:shashankts2004@gmail.com" class="btn-primary">Get In Touch</a>
+    <a href="https://drive.google.com/file/d/1Jf3VVzAGzvrqk_degN0CBewy8ZbYCa1u/view?usp=sharing" target="_blank" class="btn-secondary">Resume ↗</a>
+    <a href="https://www.linkedin.com/in/shashank-ts-037264288/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+    <a href="https://github.com/Legendtss" target="_blank" class="btn-secondary">GitHub ↗</a>
+    <a href="https://leetcode.com/u/Brutetobest/" target="_blank" class="btn-secondary">LeetCode ↗</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat">
+    <span class="stat-num">9.05</span>
+    <span class="stat-label">CGPA — BMSIT</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">99%</span>
+    <span class="stat-label">Threat Detection Accuracy</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">94%</span>
+    <span class="stat-label">SSIM — SAR Colorization</span>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-badge">
+      <span class="live-dot"></span> Currently Active · Jan 2026 – Present
+    </div>
+    <div class="exp-title">Quantum Computing Intern</div>
+    <div class="exp-org">Ada Lovelace Software Private Limited · Remote · Bengaluru</div>
+    <p class="exp-desc">
+      Applying fundamental quantum computing concepts to practical and real-world inspired problems. Gaining hands-on experience with quantum circuits, quantum theory, and bridging classical AI/ML knowledge with emerging quantum paradigms.
+    </p>
+    <div class="skill-chips">
+      <span class="chip">Quantum Computing</span>
+      <span class="chip">Quantum Theory</span>
+      <span class="chip">Quantum Circuits</span>
+      <span class="chip">Algorithm Design</span>
+      <span class="chip">Julia / Python</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="projects-grid">
+    <a href="https://github.com/Legendtss/cybersecurity-website" target="_blank" class="project-card" style="text-decoration: none; cursor: pointer;">
+      <div class="project-grade">GRADE: 89%</div>
+      <div class="project-icon">🛡️</div>
+      <div class="project-title">Cybersecurity Threat Detection Using ML</div>
+      <p class="project-desc">
+        Built a real-time intrusion detection system achieving 99% accuracy on the CIC-IDS2017 dataset. Implemented Random Forest and MLP classifiers with TensorFlow/Scikit-learn, and optimized performance through feature selection and SMOTE oversampling techniques to handle class imbalance.
+      </p>
+      <div class="skill-chips">
+        <span class="chip">TensorFlow</span>
+        <span class="chip">Random Forest</span>
+        <span class="chip">MLP</span>
+        <span class="chip">SMOTE</span>
+        <span class="chip">Feature Selection</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/Legendtss/sarcolorize" target="_blank" class="project-card" style="text-decoration: none; cursor: pointer;">
+      <div class="project-grade">GRADE: 87%</div>
+      <div class="project-icon">🛰️</div>
+      <div class="project-title">SAR Image Colorization Using Deep Learning</div>
+      <p class="project-desc">
+        Created a custom CNN architecture for Synthetic Aperture Radar (SAR) false-colorization. Engineered perceptual loss functions to preserve structural integrity and achieved 94% SSIM similarity to ground-truth optical references — enabling richer satellite imagery interpretation.
+      </p>
+      <div class="skill-chips">
+        <span class="chip">CNN</span>
+        <span class="chip">Perceptual Loss</span>
+        <span class="chip">SSIM</span>
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Deep Learning</span>
+      </div>
+    </a>
+
+    <div class="project-card">
+      <div class="project-icon">🔐</div>
+      <div class="project-title">Quantum Secure Key Generator</div>
+      <p class="project-desc">
+        Built a cryptographic key generator leveraging quantum computing principles for enhanced security. Implements quantum random number generation and key distribution protocols, demonstrating practical applications of quantum mechanics in cybersecurity.
+      </p>
+      <div class="skill-chips">
+        <span class="chip">Quantum Computing</span>
+        <span class="chip">Cryptography</span>
+        <span class="chip">Python</span>
+        <span class="chip">Key Distribution</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Legendtss/Quantum_Secure_Key_Generator" target="_blank" class="project-link repo">GitHub</a>
+        <a href="https://legendtss.github.io/Quantum_Secure_Key_Generator" target="_blank" class="project-link demo">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🧘</div>
+      <div class="project-title">PostureGuard — Real-time Slouch Detector</div>
+      <p class="project-desc">
+        Developed a real-time posture monitoring system using computer vision and pose estimation. Detects slouching and poor posture through webcam feed analysis, providing instant alerts to help users maintain healthy sitting habits.
+      </p>
+      <div class="skill-chips">
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Pose Estimation</span>
+        <span class="chip">OpenCV</span>
+        <span class="chip">Real-time Detection</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Legendtss/PostureGuard" target="_blank" class="project-link repo">GitHub</a>
+        <a href="https://legendtss.github.io/PostureGuard/" target="_blank" class="project-link demo">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Skills</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Programming</div>
+      <div class="skill-list">
+        <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+        <div class="skill-item"><span>C</span><div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div></div>
+        <div class="skill-item"><span>Julia</span><div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div></div>
+        <div class="skill-item"><span>SQL</span><div class="skill-bar"><div class="skill-bar-fill" style="width:72%"></div></div></div>
+        <div class="skill-item"><span>HTML/CSS</span><div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">AI / ML</div>
+      <div class="skill-list">
+        <div class="skill-item"><span>TensorFlow</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span>Scikit-Learn</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span>CNN Architecture</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><span>Threat Detection</span><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><span>Feature Engineering</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Methods & Emerging</div>
+      <div class="skill-list">
+        <div class="skill-item"><span>Quantum Computing</span><div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div></div>
+        <div class="skill-item"><span>Data Structures</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span>Algorithm Design</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span>SMOTE Techniques</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><span>Computer Vision</span><div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🎓</div>
+      <div>
+        <div class="cert-name">Machine Learning Specialization</div>
+        <div class="cert-org">Stanford University · Coursera</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🌐</div>
+      <div>
+        <div class="cert-name">Full-Stack Web Development</div>
+        <div class="cert-org">Udemy</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">⚡</div>
+      <div>
+        <div class="cert-name">Competitive Programming</div>
+        <div class="cert-org">NPTEL</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">E-Business</div>
+        <div class="cert-org">NPTEL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="contact-grid">
+    <a href="mailto:shashankts2004@gmail.com" class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-val">shashankts2004@gmail.com</div>
+      </div>
+    </a>
+    <a href="https://www.linkedin.com/in/shashank-ts-037264288/" target="_blank" class="contact-item">
+      <div class="contact-icon">💼</div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-val">linkedin.com/in/shashank-ts</div>
+      </div>
+    </a>
+    <a href="https://github.com/Legendtss" target="_blank" class="contact-item">
+      <div class="contact-icon">⌨️</div>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-val">github.com/Legendtss</div>
+      </div>
+    </a>
+    <a href="https://leetcode.com/u/Brutetobest/" target="_blank" class="contact-item">
+      <div class="contact-icon">🔢</div>
+      <div>
+        <div class="contact-label">LeetCode</div>
+        <div class="contact-val">leetcode.com/u/Brutetobest</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div>T S SHASHANK · AI/ML & QUANTUM COMPUTING · BENGALURU, INDIA · 2026</div>
+</footer>
+
+<script>
+  // Scroll-triggered fade-in for sections
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section, .stats-row').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(32px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+
+  // Typewriter cursor blink on hero tag
+  const tag = document.querySelector('.hero-tag');
+  setInterval(() => {
+    tag.style.opacity = tag.style.opacity === '0.6' ? '1' : '0.6';
+  }, 800);
+
+  // Hamburger menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    const isExpanded = hamburger.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
+  });
+
+  // Close menu when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
