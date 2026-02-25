@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing AI/ML projects, quantum computing work, and professional experience.
 
-**Live Site:** [legendtss.github.io](https://legendtss.github.io)
+**Live Site:** [legendtss.github.io/Portfolio](https://legendtss.github.io/Portfolio/)
 
 ## Features
 
@@ -119,7 +119,7 @@ This portfolio is open source. Feel free to fork and customize for your own use.
 ---
 
 **Quick Links:**
-- 🔗 [Live Portfolio](https://legendtss.github.io)
+- 🔗 [Live Portfolio](https://legendtss.github.io/Portfolio/)
 - 💼 [LinkedIn](https://linkedin.com/in/shashank-ts-037264288/)
 - 🐙 [GitHub](https://github.com/Legendtss)
 - 🧩 [LeetCode](https://leetcode.com/u/Brutetobest/)
