@@ -497,34 +497,27 @@
     display: block;
   }
 
-  .skill-list {
+  .skill-pills {
     display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.55rem;
   }
 
-  .skill-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.88rem;
+  .skill-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
     color: #cbd5e1;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(0,212,255,0.22);
+    background: rgba(0,212,255,0.08);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition: all 0.2s;
   }
 
-  .skill-bar {
-    width: 80px;
-    height: 3px;
-    background: var(--surface2);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-bar-fill {
-    position: absolute;
-    left: 0; top: 0; height: 100%;
-    background: linear-gradient(to right, var(--accent), var(--accent2));
-    animation: barGrow 1.5s ease both;
-    transform-origin: left;
+  .skill-pill:hover {
+    border-color: rgba(0,212,255,0.35);
+    color: #e2f6ff;
   }
 
   /* CERTS */
@@ -955,82 +948,72 @@
   <div class="skills-grid">
     <div class="skill-group">
       <div class="skill-group-title">Languages</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div></div>
-        <div class="skill-item"><span>C</span><div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div></div>
-        <div class="skill-item"><span>Database Management (PostgreSQL/MySQL)</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">C</span>
+        <span class="skill-pill">PostgreSQL/MySQL</span>
       </div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-group-title">Machine Learning</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>PyTorch</span><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><span>Keras</span><div class="skill-bar"><div class="skill-bar-fill" style="width:86%"></div></div></div>
-        <div class="skill-item"><span>Scikit-learn</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span>TensorFlow</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
-        <div class="skill-item"><span>Neural Networks (MLP)</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
-        <div class="skill-item"><span>CNNs</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><span>Feature Selection</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
-        <div class="skill-item"><span>Model Evaluation</span><div class="skill-bar"><div class="skill-bar-fill" style="width:86%"></div></div></div>
+      <div class="skill-group-title">Machine Learning & AI</div>
+      <div class="skill-pills">
+        <span class="skill-pill">PyTorch</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">Keras</span>
+        <span class="skill-pill">Scikit-learn</span>
+        <span class="skill-pill">MLP/CNN</span>
+        <span class="skill-pill">Model Evaluation</span>
       </div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-group-title">Data Processing & Analysis</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>NumPy</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span>Pandas</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span>Data Preprocessing</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span>Feature Engineering</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
-        <div class="skill-item"><span>Statistical Analysis</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><span>Entropy Analysis</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
-        <div class="skill-item"><span>Matplotlib</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
-        <div class="skill-item"><span>Seaborn</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
+      <div class="skill-group-title">Data & Analytics</div>
+      <div class="skill-pills">
+        <span class="skill-pill">NumPy</span>
+        <span class="skill-pill">Pandas</span>
+        <span class="skill-pill">Data Preprocessing</span>
+        <span class="skill-pill">Feature Engineering</span>
+        <span class="skill-pill">Matplotlib</span>
+        <span class="skill-pill">Seaborn</span>
       </div>
     </div>
 
     <div class="skill-group">
       <div class="skill-group-title">Backend & Systems</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>FastAPI</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
-        <div class="skill-item"><span>REST API Design</span><div class="skill-bar"><div class="skill-bar-fill" style="width:86%"></div></div></div>
-        <div class="skill-item"><span>System Integration</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-title">Quantum Computing</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>Qiskit</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span>Quantum Circuit Design</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
-        <div class="skill-item"><span>IBM Quantum Runtime</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-group-title">Cryptography & Security</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>Cryptographic Key Generation</span><div class="skill-bar"><div class="skill-bar-fill" style="width:84%"></div></div></div>
+      <div class="skill-pills">
+        <span class="skill-pill">FastAPI</span>
+        <span class="skill-pill">REST API Design</span>
+        <span class="skill-pill">System Integration</span>
+        <span class="skill-pill">Linux</span>
       </div>
     </div>
 
     <div class="skill-group">
       <div class="skill-group-title">Computer Vision</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>OpenCV</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span>Pix2Pix (GANs)</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
-        <div class="skill-item"><span>Image-to-Image Translation</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+      <div class="skill-pills">
+        <span class="skill-pill">OpenCV</span>
+        <span class="skill-pill">Pix2Pix (GANs)</span>
+        <span class="skill-pill">Image-to-Image Translation</span>
       </div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-group-title">Tools & Platforms</div>
-      <div class="skill-list">
-        <div class="skill-item"><span>Git</span><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><span>Linux</span><div class="skill-bar"><div class="skill-bar-fill" style="width:78%"></div></div></div>
-        <div class="skill-item"><span>VS Code</span><div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div></div>
-        <div class="skill-item"><span>Jupyter Notebook</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+      <div class="skill-group-title">Quantum & Security</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Qiskit</span>
+        <span class="skill-pill">Quantum Circuit Design</span>
+        <span class="skill-pill">IBM Quantum Runtime</span>
+        <span class="skill-pill">Cryptographic Key Generation</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Tools</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Git</span>
+        <span class="skill-pill">VS Code</span>
+        <span class="skill-pill">Jupyter Notebook</span>
       </div>
     </div>
   </div>
