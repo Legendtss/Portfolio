@@ -461,63 +461,168 @@
   }
 
   /* SKILLS */
-  .skills-grid {
+  .skills-root {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 10% 20%, rgba(0,255,180,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 300px at 90% 80%, rgba(0,150,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .skills-root .sh {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .skills-root .sh-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #00ffb2;
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+  }
+
+  .skills-root .sh-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .skills-root .sh-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,255,178,0.3) 0%, transparent 100%);
+  }
+
+  .skills-root .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 1;
   }
 
-  .skill-group {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 1.75rem;
-    transition: border-color 0.3s;
+  .skills-root .sg {
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.02);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, background 0.3s ease;
   }
 
-  .skill-group:hover {
-    border-color: rgba(0,212,255,0.25);
+  .skills-root .sg.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .skill-group-title {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
+  .skills-root .sg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 12px 12px 0 0;
+    background: var(--accent);
+    opacity: 0.75;
+    transition: opacity 0.3s;
+  }
+
+  .skills-root .sg:hover {
+    border-color: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .skills-root .sg:hover::before {
+    opacity: 1;
+  }
+
+  .skills-root .sg[data-cat="lang"]  { --accent: linear-gradient(90deg,#00ffb2,#00d4ff); --tc: #00e5a8; }
+  .skills-root .sg[data-cat="ml"]    { --accent: linear-gradient(90deg,#b06aff,#ff6af0); --tc: #cc88ff; }
+  .skills-root .sg[data-cat="data"]  { --accent: linear-gradient(90deg,#ffaa00,#ff6a00); --tc: #ffbb44; }
+  .skills-root .sg[data-cat="be"]    { --accent: linear-gradient(90deg,#00c6ff,#0072ff); --tc: #44aaff; }
+  .skills-root .sg[data-cat="cv"]    { --accent: linear-gradient(90deg,#11998e,#38ef7d); --tc: #44dda0; }
+  .skills-root .sg[data-cat="qc"]    { --accent: linear-gradient(90deg,#fc466b,#3f5efb); --tc: #ff7eb3; }
+  .skills-root .sg[data-cat="tools"] { --accent: linear-gradient(90deg,#f7971e,#ffd200); --tc: #ffd84a; }
+
+  .skills-root .sg-icon {
+    font-size: 18px;
+    margin-bottom: 0.6rem;
+    display: block;
+    opacity: 0.85;
+  }
+
+  .skills-root .sg-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    color: var(--tc);
+    margin: 0 0 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
 
-  .skill-group-title::before {
+  .skills-root .sg-title::before {
     content: '';
-    width: 6px; height: 6px;
-    background: var(--accent);
-    display: block;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tc);
+    flex-shrink: 0;
   }
 
-  .skill-pills {
+  .skills-root .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
+    gap: 0.45rem;
   }
 
-  .skill-pill {
+  .skills-root .pill {
     font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    color: #cbd5e1;
-    padding: 0.35rem 0.7rem;
-    border: 1px solid rgba(0,212,255,0.22);
-    background: rgba(0,212,255,0.08);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.04);
+    color: #b0b8cc;
     letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
+    cursor: default;
     white-space: nowrap;
-    transition: all 0.2s;
   }
 
-  .skill-pill:hover {
-    border-color: rgba(0,212,255,0.35);
-    color: #e2f6ff;
+  .skills-root .pill:hover {
+    border-color: var(--tc);
+    color: var(--tc);
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-1px);
+  }
+
+  .skills-root .sg-wide {
+    grid-column: span 3;
   }
 
   /* CERTS */
@@ -747,6 +852,10 @@
     .skills-grid {
       grid-template-columns: 1fr 1fr;
     }
+
+    .skills-root .sg-wide {
+      grid-column: span 2;
+    }
   }
 
   /* RESPONSIVE - Mobile */
@@ -945,19 +1054,27 @@
       grid-template-columns: 1fr;
       gap: 1.25rem;
     }
-    
-    .skill-group {
+
+    .skills-root .sh {
+      margin-bottom: 2rem;
+    }
+
+    .skills-root .sg {
       padding: 1.25rem;
     }
-    
-    .skill-group-title {
-      font-size: 0.65rem;
+
+    .skills-root .sg-title {
+      font-size: 0.62rem;
       margin-bottom: 1rem;
     }
-    
-    .skill-pill {
-      font-size: 0.68rem;
-      padding: 0.3rem 0.55rem;
+
+    .skills-root .pill {
+      font-size: 0.65rem;
+      padding: 0.28rem 0.52rem;
+    }
+
+    .skills-root .sg-wide {
+      grid-column: span 1;
     }
 
     /* CERTS */
@@ -1126,17 +1243,20 @@
     <div class="exp-badge">
       <span class="live-dot"></span> Currently Active · Jan 2026 – Present
     </div>
-    <div class="exp-title">Quantum Computing Intern</div>
-    <div class="exp-org">Ada Lovelace Software Private Limited · Remote · Bengaluru</div>
+    <div class="exp-title">Machine Learning Intern</div>
+    <div class="exp-org">Ada Lovelace Software Pvt. Ltd. · Remote</div>
     <p class="exp-desc">
-      Applying fundamental quantum computing concepts to practical and real-world inspired problems. Gaining hands-on experience with quantum circuits, quantum theory, and bridging classical AI/ML knowledge with emerging quantum paradigms.
+      • Designed and implemented ML-based evaluation models to analyze entropy patterns and identify the most secure cryptographic keys generated from quantum simulation outputs.<br>
+      • Developed and optimized binary classification models for structured datasets, improving prediction accuracy through feature engineering and iterative model tuning.<br>
+      • Built data processing pipelines integrating quantum simulation outputs with classical post-processing workflows for scalable model training and evaluation.<br>
+      • Implemented automated validation pipelines to assess randomness quality and benchmark model predictions against statistical entropy metrics.
     </p>
     <div class="skill-chips">
-      <span class="chip">Quantum Computing</span>
-      <span class="chip">Quantum Theory</span>
-      <span class="chip">Quantum Circuits</span>
-      <span class="chip">Algorithm Design</span>
-      <span class="chip">Julia / Python</span>
+      <span class="chip">Machine Learning</span>
+      <span class="chip">Binary Classification</span>
+      <span class="chip">Feature Engineering</span>
+      <span class="chip">Data Pipelines</span>
+      <span class="chip">Entropy Analysis</span>
     </div>
   </div>
 </section>
@@ -1233,82 +1353,89 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2 class="section-title">Skills</h2>
-    <div class="section-line"></div>
+<section id="skills" class="skills-root">
+  <div class="sh">
+    <span class="sh-num">03</span>
+    <h2 class="sh-title">Skills</h2>
+    <div class="sh-line"></div>
   </div>
 
   <div class="skills-grid">
-    <div class="skill-group">
-      <div class="skill-group-title">Languages</div>
-      <div class="skill-pills">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">C</span>
-        <span class="skill-pill">PostgreSQL/MySQL</span>
+    <div class="sg" data-cat="lang">
+      <span class="sg-icon">&lt;/&gt;</span>
+      <div class="sg-title">Languages</div>
+      <div class="pills">
+        <span class="pill">Python</span>
+        <span class="pill">C</span>
+        <span class="pill">PostgreSQL / MySQL</span>
       </div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-group-title">Machine Learning & AI</div>
-      <div class="skill-pills">
-        <span class="skill-pill">PyTorch</span>
-        <span class="skill-pill">TensorFlow</span>
-        <span class="skill-pill">Keras</span>
-        <span class="skill-pill">Scikit-learn</span>
-        <span class="skill-pill">MLP/CNN</span>
-        <span class="skill-pill">Model Evaluation</span>
+    <div class="sg" data-cat="ml">
+      <span class="sg-icon">✎</span>
+      <div class="sg-title">Machine Learning & AI</div>
+      <div class="pills">
+        <span class="pill">PyTorch</span>
+        <span class="pill">TensorFlow</span>
+        <span class="pill">Keras</span>
+        <span class="pill">Scikit-learn</span>
+        <span class="pill">MLP / CNN</span>
+        <span class="pill">Model Evaluation</span>
       </div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-group-title">Data & Analytics</div>
-      <div class="skill-pills">
-        <span class="skill-pill">NumPy</span>
-        <span class="skill-pill">Pandas</span>
-        <span class="skill-pill">Data Preprocessing</span>
-        <span class="skill-pill">Feature Engineering</span>
-        <span class="skill-pill">Matplotlib</span>
-        <span class="skill-pill">Seaborn</span>
+    <div class="sg" data-cat="data">
+      <span class="sg-icon">⦸</span>
+      <div class="sg-title">Data & Analytics</div>
+      <div class="pills">
+        <span class="pill">NumPy</span>
+        <span class="pill">Pandas</span>
+        <span class="pill">Data Preprocessing</span>
+        <span class="pill">Feature Engineering</span>
+        <span class="pill">Matplotlib</span>
+        <span class="pill">Seaborn</span>
       </div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-group-title">Backend & Systems</div>
-      <div class="skill-pills">
-        <span class="skill-pill">FastAPI</span>
-        <span class="skill-pill">REST API Design</span>
-        <span class="skill-pill">System Integration</span>
-        <span class="skill-pill">Linux</span>
+    <div class="sg" data-cat="be">
+      <span class="sg-icon">⚙</span>
+      <div class="sg-title">Backend & Systems</div>
+      <div class="pills">
+        <span class="pill">FastAPI</span>
+        <span class="pill">REST API Design</span>
+        <span class="pill">System Integration</span>
+        <span class="pill">Linux</span>
       </div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-group-title">Computer Vision</div>
-      <div class="skill-pills">
-        <span class="skill-pill">OpenCV</span>
-        <span class="skill-pill">Pix2Pix (GANs)</span>
-        <span class="skill-pill">Image-to-Image Translation</span>
+    <div class="sg" data-cat="cv">
+      <span class="sg-icon">◉</span>
+      <div class="sg-title">Computer Vision</div>
+      <div class="pills">
+        <span class="pill">OpenCV</span>
+        <span class="pill">Pix2Pix (GANs)</span>
+        <span class="pill">Image-to-Image Translation</span>
       </div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-group-title">Quantum & Security</div>
-      <div class="skill-pills">
-        <span class="skill-pill">Qiskit</span>
-        <span class="skill-pill">Quantum Circuit Design</span>
-        <span class="skill-pill">IBM Quantum Runtime</span>
-        <span class="skill-pill">Cryptographic Key Generation</span>
+    <div class="sg" data-cat="qc">
+      <span class="sg-icon">✦</span>
+      <div class="sg-title">Quantum & Security</div>
+      <div class="pills">
+        <span class="pill">Qiskit</span>
+        <span class="pill">Quantum Circuit Design</span>
+        <span class="pill">IBM Quantum Runtime</span>
+        <span class="pill">Cryptographic Key Generation</span>
       </div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-group-title">Tools</div>
-      <div class="skill-pills">
-        <span class="skill-pill">Git</span>
-        <span class="skill-pill">VS Code</span>
-        <span class="skill-pill">Jupyter Notebook</span>
+    <div class="sg sg-wide" data-cat="tools">
+      <span class="sg-icon">🔨</span>
+      <div class="sg-title">Tools</div>
+      <div class="pills">
+        <span class="pill">Git</span>
+        <span class="pill">VS Code</span>
+        <span class="pill">Jupyter Notebook</span>
       </div>
     </div>
   </div>
@@ -1468,6 +1595,13 @@
       navLinks.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  const skillCards = document.querySelectorAll('.skills-root .sg');
+  skillCards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('visible');
+    }, 80 + index * 90);
   });
 </script>
 
