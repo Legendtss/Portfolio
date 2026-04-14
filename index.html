@@ -539,6 +539,27 @@
 
   .cert-card:hover { border-color: rgba(0,212,255,0.25); }
 
+  a.cert-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+  }
+
+  a.cert-card::after {
+    content: "🔗";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+
+  a.cert-card:hover::after {
+    opacity: 1;
+  }
+
   .cert-icon {
     width: 36px; height: 36px;
     flex-shrink: 0;
