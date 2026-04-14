@@ -1140,48 +1140,57 @@
 
   <div class="projects-grid">
     <a href="https://github.com/Legendtss/cybersecurity-website" target="_blank" class="project-card" style="text-decoration: none; cursor: pointer;">
-      <div class="project-grade">GRADE: 89%</div>
+      <div class="project-grade">2024</div>
       <div class="project-icon">🛡️</div>
       <div class="project-title">Cybersecurity Threat Detection Using ML</div>
       <p class="project-desc">
-        Built a real-time intrusion detection system achieving 99% accuracy on the CIC-IDS2017 dataset. Implemented Random Forest and MLP classifiers with TensorFlow/Scikit-learn, and optimized performance through feature selection and SMOTE oversampling techniques to handle class imbalance.
+        • Preprocessed and cleaned the CIC-IDS2017 dataset, including handling missing values, normalization, and feature engineering.<br>
+        • Performed attack classification by dividing network traffic into multiple attack categories for supervised learning.<br>
+        • Trained and compared Naive Bayes, QDA, and MLP models, with MLP achieving the best performance in intrusion detection.
       </p>
       <div class="skill-chips">
-        <span class="chip">TensorFlow</span>
-        <span class="chip">Random Forest</span>
+        <span class="chip">CIC-IDS2017</span>
+        <span class="chip">Naive Bayes</span>
+        <span class="chip">QDA</span>
         <span class="chip">MLP</span>
-        <span class="chip">SMOTE</span>
-        <span class="chip">Feature Selection</span>
+        <span class="chip">Feature Engineering</span>
       </div>
     </a>
 
     <a href="https://github.com/Legendtss/sarcolorize" target="_blank" class="project-card" style="text-decoration: none; cursor: pointer;">
-      <div class="project-grade">GRADE: 87%</div>
+      <div class="project-grade">2024</div>
       <div class="project-icon">🛰️</div>
       <div class="project-title">SAR Image Colorization Using Deep Learning</div>
       <p class="project-desc">
-        Created a custom CNN architecture for Synthetic Aperture Radar (SAR) false-colorization. Engineered perceptual loss functions to preserve structural integrity and achieved 94% SSIM similarity to ground-truth optical references — enabling richer satellite imagery interpretation.
+        • Implemented a Pix2Pix GAN model for SAR-to-RGB image colorization using Sentinel-1 and Sentinel-2 datasets (~16K images).<br>
+        • Evaluated model performance using PSNR (~25) and SSIM (~0.7), ensuring structural and visual consistency.<br>
+        • Extended the pipeline with land cover classification to generate heatmaps for urban, vegetation, and forest regions post-colorization.
       </p>
       <div class="skill-chips">
-        <span class="chip">CNN</span>
-        <span class="chip">Perceptual Loss</span>
+        <span class="chip">Pix2Pix GAN</span>
+        <span class="chip">Sentinel-1/2</span>
+        <span class="chip">PSNR</span>
         <span class="chip">SSIM</span>
-        <span class="chip">Computer Vision</span>
-        <span class="chip">Deep Learning</span>
+        <span class="chip">Land Cover Classification</span>
       </div>
     </a>
 
     <div class="project-card">
+      <div class="project-grade">2025 - Present</div>
       <div class="project-icon">🔐</div>
-      <div class="project-title">Quantum Secure Key Generator</div>
+      <div class="project-title">Quantum-Secure Cryptographic Infrastructure with IBM Quantum</div>
       <p class="project-desc">
-        Built a cryptographic key generator leveraging quantum computing principles for enhanced security. Implements quantum random number generation and key distribution protocols, demonstrating practical applications of quantum mechanics in cybersecurity.
+        • Built a quantum-based entropy generation system using Qiskit, executing circuits on both AerSimulator and real IBM quantum hardware.<br>
+        • Applied ML-based evaluation techniques to analyze entropy patterns and select high-quality, secure cryptographic keys.<br>
+        • Designed and deployed a full-stack application (Python backend + web frontend) for key generation, encryption (AES-256), and real-time analysis.
       </p>
       <div class="skill-chips">
-        <span class="chip">Quantum Computing</span>
-        <span class="chip">Cryptography</span>
+        <span class="chip">Qiskit</span>
+        <span class="chip">IBM Quantum</span>
+        <span class="chip">AerSimulator</span>
+        <span class="chip">AES-256</span>
         <span class="chip">Python</span>
-        <span class="chip">Key Distribution</span>
+        <span class="chip">Full-Stack</span>
       </div>
       <div class="project-links">
         <a href="https://github.com/Legendtss/Quantum_Secure_Key_Generator" target="_blank" class="project-link repo">GitHub</a>
