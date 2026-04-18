@@ -673,7 +673,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    color: #d6deeb;
+    overflow: hidden;
+  }
+
+  .cert-icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: currentColor;
+  }
+
+  .cert-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 
   .cert-name {
@@ -1101,7 +1116,11 @@
     .cert-icon {
       width: 32px;
       height: 32px;
-      font-size: 0.9rem;
+    }
+
+    .cert-icon svg {
+      width: 18px;
+      height: 18px;
     }
     
     .cert-name {
@@ -1466,56 +1485,80 @@
 
   <div class="certs-grid">
     <div class="cert-card">
-      <div class="cert-icon">🎓</div>
+      <div class="cert-icon" aria-hidden="true">
+        <svg role="img" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M11.374 23.977c-4.183-.21-8.006-2.626-9.959-6.347-2.097-3.858-1.871-8.864.732-12.454C4.748 1.338 9.497-.698 14.281.23c4.583.857 8.351 4.494 9.358 8.911 1.122 4.344-.423 9.173-3.925 12.04-2.289 1.953-5.295 2.956-8.34 2.797zm7.705-8.05a588.737 588.737 0 0 0-3.171-1.887c-.903 1.483-2.885 2.248-4.57 1.665-2.024-.639-3.394-2.987-2.488-5.134.801-2.009 2.79-2.707 4.357-2.464a4.19 4.19 0 0 1 2.623 1.669c1.077-.631 2.128-1.218 3.173-1.855-2.03-3.118-6.151-4.294-9.656-2.754-3.13 1.423-4.89 4.68-4.388 7.919.54 3.598 3.73 6.486 7.716 6.404a7.664 7.664 0 0 0 6.404-3.563z"/>
+        </svg>
+      </div>
       <div>
         <div class="cert-name">Machine Learning Specialization</div>
         <div class="cert-org">Stanford University · Coursera</div>
       </div>
     </div>
     <div class="cert-card">
-      <div class="cert-icon">🌐</div>
+      <div class="cert-icon" aria-hidden="true">
+        <svg role="img" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M12 0L5.81 3.573v3.574l6.189-3.574 6.191 3.574V3.573zM5.81 10.148v8.144c0 1.85.589 3.243 1.741 4.234S10.177 24 11.973 24s3.269-.482 4.448-1.474c1.179-.991 1.768-2.439 1.768-4.314v-8.064h-3.242v7.85c0 2.036-1.509 3.055-2.948 3.055-1.428 0-2.947-.991-2.947-3.027v-7.878z"/>
+        </svg>
+      </div>
       <div>
         <div class="cert-name">Full-Stack Web Development</div>
         <div class="cert-org">Udemy</div>
       </div>
     </div>
     <div class="cert-card">
-      <div class="cert-icon">⚡</div>
+      <div class="cert-icon" aria-hidden="true">
+        <img src="https://nptel.ac.in/_app/immutable/assets/logo-m.CNHeS_sM.jpg" alt="NPTEL logo" loading="lazy">
+      </div>
       <div>
         <div class="cert-name">Competitive Programming</div>
         <div class="cert-org">NPTEL</div>
       </div>
     </div>
     <div class="cert-card">
-      <div class="cert-icon">📊</div>
+      <div class="cert-icon" aria-hidden="true">
+        <img src="https://nptel.ac.in/_app/immutable/assets/logo-m.CNHeS_sM.jpg" alt="NPTEL logo" loading="lazy">
+      </div>
       <div>
         <div class="cert-name">E-Business</div>
         <div class="cert-org">NPTEL</div>
       </div>
     </div>
-    <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25MG81S25260695410206104" target="_blank" class="cert-card">
-      <div class="cert-icon">🚀</div>
+    <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25MG81S25260695410206104" target="_blank" rel="noopener noreferrer" class="cert-card">
+      <div class="cert-icon" aria-hidden="true">
+        <img src="https://nptel.ac.in/_app/immutable/assets/logo-m.CNHeS_sM.jpg" alt="NPTEL logo" loading="lazy">
+      </div>
       <div>
         <div class="cert-name">Entrepreneurship</div>
         <div class="cert-org">NPTEL</div>
       </div>
     </a>
-    <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS146S105260014610206104" target="_blank" class="cert-card">
-      <div class="cert-icon">🏭</div>
+    <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS146S105260014610206104" target="_blank" rel="noopener noreferrer" class="cert-card">
+      <div class="cert-icon" aria-hidden="true">
+        <img src="https://nptel.ac.in/_app/immutable/assets/logo-m.CNHeS_sM.jpg" alt="NPTEL logo" loading="lazy">
+      </div>
       <div>
         <div class="cert-name">Introduction to Industry 4.0 and Industrial Internet of Things</div>
         <div class="cert-org">NPTEL</div>
       </div>
     </a>
-    <a href="https://verify.skilljar.com/c/up6j852tytxv" target="_blank" class="cert-card">
-      <div class="cert-icon">🤖</div>
+    <a href="https://verify.skilljar.com/c/up6j852tytxv" target="_blank" rel="noopener noreferrer" class="cert-card">
+      <div class="cert-icon" aria-hidden="true">
+        <svg role="img" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/>
+        </svg>
+      </div>
       <div>
         <div class="cert-name">AI Fluency: Framework & Foundations</div>
         <div class="cert-org">Anthropic</div>
       </div>
     </a>
-    <a href="https://verify.skilljar.com/c/wecjzus95gtu" target="_blank" class="cert-card">
-      <div class="cert-icon">💻</div>
+    <a href="https://verify.skilljar.com/c/wecjzus95gtu" target="_blank" rel="noopener noreferrer" class="cert-card">
+      <div class="cert-icon" aria-hidden="true">
+        <svg role="img" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"/>
+        </svg>
+      </div>
       <div>
         <div class="cert-name">Claude Code in Action</div>
         <div class="cert-org">Anthropic</div>
